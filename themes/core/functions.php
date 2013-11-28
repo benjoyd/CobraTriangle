@@ -1,11 +1,19 @@
 <?php
 /**
-* Helpers for the template file.
-*/
-$ct->data['header'] = '<h1>Header: CobraTriangle</h1>';
-$ct->data['footer'] = <<<EOD
+ * Helpers for the template file.
+ */
 
-<p>Footer: &copy; CobraTriangle by Benjamin Strindin (benjaminstrindin@gmail.com)</p>
+/**
+ * Add static entries for use in the template file. 
+ */
+$ct->data['header'] = 'CobraTriangle';
+$ct->data['slogan'] = 'A PHP-based MVC-inspired CMF';
+$ct->data['favicon']      = theme_url('logo_80x80.png');
+$ct->data['logo']         = theme_url('logo_80x80.png');
+$ct->data['logo_width']   = 80;
+$ct->data['logo_height']  = 80;
+$ct->data['footer'] = <<<EOD
+<p>CobraTriangle &copy; by Benjamin</p>
 
 <p>Tools: 
 <a href="http://validator.w3.org/check/referer">html5</a>
@@ -33,15 +41,3 @@ $ct->data['footer'] = <<<EOD
 </p>
 
 EOD;
-
-/**
-* Print debuginformation from the framework.
-*/
-function get_debug()
-{
-  $ct = CCobraTriangle::Instance();
-  $html = "<h2>Debuginformation</h2><hr><p>The content of the config array:</p><pre>" . htmlentities(print_r($ct->config, true)) . "</pre>";
-  $html .= "<hr><p>The content of the data array:</p><pre>" . htmlentities(print_r($ct->data, true)) . "</pre>";
-  $html .= "<hr><p>The content of the request array:</p><pre>" . htmlentities(print_r($ct->request, true)) . "</pre>";
-  return $html;
-}

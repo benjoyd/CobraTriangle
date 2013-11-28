@@ -5,7 +5,7 @@
 define('COBRATRIANGLE_INSTALL_PATH', dirname(__FILE__));
 define('COBRATRIANGLE_SITE_PATH', COBRATRIANGLE_INSTALL_PATH . '/site');
 
-require(COBRATRIANGLE_INSTALL_PATH.'/src/CCobraTriangle/bootstrap.php');
+require(COBRATRIANGLE_INSTALL_PATH.'/src/bootstrap.php');
 
 $ct = CCobraTriangle::Instance();
 

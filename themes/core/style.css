@@ -1,21 +1,78 @@
-/**
-* Description: Core theme for CobraTriangle
-*/
+/** 
+ * Description: Core theme for CobraTriangle
+ */
 
 /**
-* Structure
-*/
-html{}
-body{
-background-color:#f1f1f1;
-font: 1em Verdana, Arial, Helvetica, sans-serif;
-}
+ * Structure
+ */
+html{background-color:#eee;}
+body{margin:0;padding:0;color:#333;background-color:#fff;
+  font: 1em monospace;}
+
+#wrap-header {}
+#wrap-main {}
+#wrap-footer {border-top:1px solid #ccc;background-color:#eee;}
 
 #header,
 #main,
-#footer {
-margin:0 auto;
-width:970px;
-background-color:#fff;
-padding: 1em;
-}
+#footer {margin:0 auto;width:970px;padding:8px;}
+#main,
+#footer {margin-bottom:16px;}
+
+#header,
+#main {background-color:#fff;}
+#main {min-height:300px;}
+#footer {font-size:0.90em;color:#666;background-color:#eee;}
+
+
+/**
+ * Banner
+ */
+#banner {display:table;margin-bottom:10px;}
+
+.site-logo,
+.site-title,
+.site-slogan {display:table-cell;width:inherit;vertical-align:middle;text-align:left;}
+
+.site-logo {}
+.site-title,
+.site-slogan {font-family:serif;line-height:0;padding-left:20px;color:#333;}
+.site-title  {font-size:4em;font-weight:bold;}
+.site-slogan {padding-top:31px;font-size:1.2em;}
+
+
+/**
+ * Links
+ */
+a         {color:inherit;}
+a:link    {}
+a:visited {}
+a:hover,
+a:focus   {text-decoration:none;color:#E15C05;}
+a:active  {}
+
+
+/**
+ * Headings
+ */
+h1{border-bottom:2px dashed #E15C05;padding-bottom:4px;}
+h2{border-bottom:1px dotted #E15C05;padding-bottom:4px;}
+
+/**
+ * User feedback message wrappers.
+ */
+.error, .alert, .warning, .notice, .success, .info { 
+padding: 0.8em; margin-bottom: 1em; border: 2px dotted #ddd; margin-left: 1em; margin-right: 1em; }
+
+.error, .alert { background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; }
+.notice, .warning { background: #fff6bf; color: #514721; border-color: #ffd324; }
+.success       { background: #e6efc2; color: #264409; border-color: #c6d880; }
+.info          { background: #d5edf8; color: #205791; border-color: #92cae4; }
+.error a, .alert a { color: #8a1f11; }
+.notice a, .warning a { color: #514721; }
+.success a         { color: #264409; }
+.info a            { color: #205791; }
+
+/**
+ * Misc
+*/
