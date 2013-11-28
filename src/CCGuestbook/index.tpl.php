@@ -20,5 +20,4 @@
   <p>At: <?=$val['created']?></p>
   <p><?=htmlent($val['entry'])?></p>
 </div>
-<?php echo $formAction ?>
 <?php endforeach;?>
