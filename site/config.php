@@ -15,10 +15,11 @@ ini_set('display_errors', 1);
  * Set what to show as debug or developer information in the get_debug() theme helper.
  */
 $ct->config['debug']['cobratriangle'] = false;
-$ct->config['debug']['session'] = true;
+$ct->config['debug']['session'] = false;
 $ct->config['debug']['timer'] = true;
 $ct->config['debug']['db-num-queries'] = true;
 $ct->config['debug']['db-queries'] = true;
+
 
 
 /**
@@ -80,6 +81,7 @@ $ct->config['controllers'] = array(
   'index'     => array('enabled' => true,'class' => 'CCIndex'),
   'developer' => array('enabled' => true,'class' => 'CCDeveloper'),
   'guestbook' => array('enabled' => true,'class' => 'CCGuestbook'),
+  'user'      => array('enabled' => true,'class' => 'CCUser'),
 );
 
 /**

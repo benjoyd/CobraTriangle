@@ -38,20 +38,19 @@ class CSession {
   }
 
 
-  /**
-   * Set flash values, to be remembered one page request
-   */
-  public function SetFlash($key, $value) {
-    $this->data['flash'][$key] = $value;
-  }
+/**
+* Get, Set or Unset the authenticated user
+*/
+public function SetAuthenticatedUser($profile) { $this->data['authenticated_user'] = $profile; }
+public function UnsetAuthenticatedUser() { unset($this->data['authenticated_user']); }
+public function GetAuthenticatedUser() { return $this->authenticated_user; }
 
 
-  /**
-   * Get flash values, if any.
-   */
-  public function GetFlash($key) {
-    return isset($this->flash[$key]) ? $this->flash[$key] : null;
-  }
+/**
+* Get or Set flash values, to be remembered one page request
+*/
+public function SetFlash($key, $value) { $this->data['flash'][$key] = $value; }
+public function GetFlash($key) { return isset($this->flash[$key]) ? $this->flash[$key] : null; }
 
 
   /**
