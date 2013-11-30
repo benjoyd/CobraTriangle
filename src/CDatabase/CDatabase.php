@@ -4,7 +4,7 @@
 *
 * @package CobraTriangleCore
 */
-class CMDatabase {
+class CDatabase {
 
    /**
     * Members

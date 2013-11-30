@@ -9,26 +9,30 @@ class CObject {
         /**
          * Members
          */
-        public $config;
-        public $request;
-        public $data;
-        public $db;
-        public $views;
-        public $session;
+        protected $config;
+        protected $request;
+        protected $data;
+        protected $db;
+        protected $views;
+        protected $session;
+        protected $user;
 
 
         /**
-         * Constructor
+         * Constructor, can be instantiated by sending in the $ct reference.
          */
-        protected function __construct() {
-    $ct = CCobraTriangle::Instance();
+        protected function __construct($ct=null) {
+          if(!$ct) {
+            $ct = CCobraTriangle::Instance();
+          } 
     $this->config   = &$ct->config;
     $this->request  = &$ct->request;
     $this->data     = &$ct->data;
     $this->db       = &$ct->db;
     $this->views    = &$ct->views;
     $this->session  = &$ct->session;
-  }
+    $this->user     = &$ct->user;
+        }
 
 
         /**
@@ -36,13 +40,13 @@ class CObject {
          */
         protected function RedirectTo($urlOrController=null, $method=null) {
     $ct = CCobraTriangle::Instance();
-    if(isset($ct->config['debug']['db-num-queries']) && $ct->config['debug']['db-num-queries'] && isset($ct->db)) {
+    if(isset($this->config['debug']['db-num-queries']) && $this->config['debug']['db-num-queries'] && isset($this->db)) {
       $this->session->SetFlash('database_numQueries', $this->db->GetNumQueries());
     }    
-    if(isset($ct->config['debug']['db-queries']) && $ct->config['debug']['db-queries'] && isset($ct->db)) {
+    if(isset($this->config['debug']['db-queries']) && $this->config['debug']['db-queries'] && isset($this->db)) {
       $this->session->SetFlash('database_queries', $this->db->GetQueries());
     }    
-    if(isset($ct->config['debug']['timer']) && $ct->config['debug']['timer']) {
+    if(isset($this->config['debug']['timer']) && $this->config['debug']['timer']) {
             $this->session->SetFlash('timer', $ct->timer);
     }    
     $this->session->StoreInSession();
@@ -73,4 +77,34 @@ class CObject {
   }
 
 
+        /**
+         * Save a message in the session. Uses $this->session->AddMessage()
+         *
+   * @param $type string the type of message, for example: notice, info, success, warning, error.
+   * @param $message string the message.
+   * @param $alternative string the message if the $type is set to false, defaults to null.
+   */
+  protected function AddMessage($type, $message, $alternative=null) {
+    if($type === false) {
+      $type = 'error';
+      $message = $alternative;
+    } else if($type === true) {
+      $type = 'success';
+    }
+    $this->session->AddMessage($type, $message);
+  }
+
+
+/**
+* Create an url. Uses $this->request->CreateUrl()
+*
+* @param $urlOrController string the relative url or the controller
+* @param $method string the method to use, $url is then the controller or empty for current
+* @param $arguments string the extra arguments to send to the method
+*/
+protected function CreateUrl($urlOrController=null, $method=null, $arguments=null) {
+  return $this->request->CreateUrl($urlOrController, $method, $arguments);
 }
+
+}
+  

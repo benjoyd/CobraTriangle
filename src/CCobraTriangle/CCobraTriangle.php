@@ -9,62 +9,66 @@ class CCobraTriangle implements ISingleton {
   /**
    * Members
    */
-  private static $instance = null;
-  public $config = array();
-  public $request;
-  public $data;
-  public $db;
-  public $views;
-  public $session;
-  public $timer = array();
+private static $instance = null;
+public $config = array();
+public $request;
+public $data;
+public $db;
+public $views;
+public $session;
+public $user;
+public $timer = array();
   
   
-  /**
-   * Constructor
-   */
-  protected function __construct() {
-    // time page generation
-    $this->timer['first'] = microtime(true); 
+/**
+* Constructor
+*/
+protected function __construct() {
+// time page generation
+$this->timer['first'] = microtime(true); 
 
-    // include the site specific config.php and create a ref to $ct to be used by config.php
-    $ct = &$this;
-    require(COBRATRIANGLE_SITE_PATH.'/config.php');
+// include the site specific config.php and create a ref to $ct to be used by config.php
+$ct = &$this;
+require(COBRATRIANGLE_SITE_PATH.'/config.php');
 
-    // Start a named session
-    session_name($this->config['session_name']);
-    session_start();
-    $this->session = new CSession($this->config['session_key']);
-    $this->session->PopulateFromSession();
+// Start a named session
+session_name($this->config['session_name']);
+session_start();
+$this->session = new CSession($this->config['session_key']);
+$this->session->PopulateFromSession();
+
+// Set default date/time-zone
+date_default_timezone_set($this->config['timezone']);
+
+// Create a database object.
+if(isset($this->config['database'][0]['dsn'])) {
+  $this->db = new CDatabase($this->config['database'][0]['dsn']);
+}
     
-    // Set default date/time-zone
-    date_default_timezone_set($this->config['timezone']);
+// Create a container for all views and theme data
+$this->views = new CViewContainer();
     
-    // Create a database object.
-    if(isset($this->config['database'][0]['dsn'])) {
-      $this->db = new CMDatabase($this->config['database'][0]['dsn']);
-    }
-    
-    // Create a container for all views and theme data
-    $this->views = new CViewContainer();
+// Create a object for the user
+$this->user = new CMUser($this);
+}
+  
+  
+/**
+* Singleton pattern. Get the instance of the latest created object or create a new one. 
+* @return CCobraTriangle The instance of this class.
+*/
+public static function Instance() {
+  if(self::$instance == null) {
+    self::$instance = new CCobraTriangle();
   }
-  
-  
-  /**
-   * Singleton pattern. Get the instance of the latest created object or create a new one. 
-   * @return CCobraTriangle The instance of this class.
-   */
-  public static function Instance() {
-    if(self::$instance == null) {
-      self::$instance = new CCobraTriangle();
-    }
-    return self::$instance;
-  }
+  return self::$instance;
+}
   
 
-  /**
-   * Frontcontroller, check url and route to controllers.
-   */
-  public function FrontControllerRoute() {
+/**
+* Frontcontroller, check url and route to controllers.
+*/
+public function FrontControllerRoute() {
     // Take current url and divide it in controller, method and parameters
     $this->request = new CRequest($this->config['url_type']);
     $this->request->Init($this->config['base_url']);
