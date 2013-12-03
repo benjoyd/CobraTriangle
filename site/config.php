@@ -63,7 +63,7 @@ $ct->config['session_name'] = preg_replace('/[:\.\/-_]/', '', __DIR__);
 $ct->config['session_key']  = 'cobratriangle';
 
 /**
- * Define server timezone
+ * default server timezone when displaying date and times to the user. All internals are still UTC.
  */
 $ct->config['timezone'] = 'Europe/Stockholm';
 
@@ -95,6 +95,10 @@ $ct->config['controllers'] = array(
   'guestbook' => array('enabled' => true,'class' => 'CCGuestbook'),
   'user'      => array('enabled' => true,'class' => 'CCUser'),
   'acp'       => array('enabled' => true,'class' => 'CCAdminControlPanel'),
+  'content'   => array('enabled' => true,'class' => 'CCContent'),
+  'blog'      => array('enabled' => true,'class' => 'CCBlog'),
+  'page'      => array('enabled' => true,'class' => 'CCPage'),
+
 );
 
 /**

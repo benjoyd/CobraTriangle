@@ -11,5 +11,5 @@
   <?php endforeach; ?>
   </ul>
 <?php else: ?>
-  <p>User is anonymous and not authenticated.</p>
+  <p>User is unknown and not authenticated.</p>
 <?php endif; ?>
