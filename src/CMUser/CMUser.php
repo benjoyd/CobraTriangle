@@ -174,7 +174,7 @@ class CMUser extends CObject implements IHasSQL, ArrayAccess {
    */
   public function CreatePassword($plain, $algorithm=null) {
     $password = array(
-      'algorithm'=>($algorithm ? $algoritm : CCobraTriangle::Instance()->config['hashing_algorithm']),
+      'algorithm'=>($algorithm ? $algorithm : CCobraTriangle::Instance()->config['hashing_algorithm']),
       'salt'=>null
     );
     switch($password['algorithm']) {
