@@ -152,12 +152,12 @@ class CCUser extends CObject implements IController {
   
 
   /**
-   * Init the user database.
-   */
+   * Init the user database. init moved to manage for the installation phase only.
+   
   public function Init() {
     $this->user->Init();
     $this->RedirectToController();
   }
-  
+*/  
 
 }
