@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine on
-  #RewriteBase /phpmvc/kmom04/CobraTriangle/
+  RewriteBase /phpmvc/kmom07/CobraTriangle/
   #RewriteBase /~best13/phpmvc/kmom03/CobraTriangle/
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

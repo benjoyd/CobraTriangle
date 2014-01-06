@@ -51,7 +51,7 @@
 <p>Implemented through lines: <?=$method['startline']?> - <?=$method['endline']?>.</p>
 <?php endif; ?>
 <?php endforeach; ?>
-<?php endif; ?>
+<?php //endif; ?>
 
 
 <?if(!empty($module['privateMethods'])): ?>
@@ -63,7 +63,7 @@
 <p>Implemented through lines: <?=$method['startline']?> - <?=$method['endline']?>.</p>
 <?php endif; ?>
 <?php endforeach; ?>
-<?php endif; ?>
+<?php //endif; ?>
 
 
 <?if(!empty($module['staticMethods'])): ?>
@@ -75,7 +75,7 @@
 <p>Implemented through lines: <?=$method['startline']?> - <?=$method['endline']?>.</p>
 <?php endif; ?>
 <?php endforeach; ?>
-<?php endif; ?>
+<?php //endif; ?>
 
 
-<?php endif; ?>
+<?php //endif; ?>

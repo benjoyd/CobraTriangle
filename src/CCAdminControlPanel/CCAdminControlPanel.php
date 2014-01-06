@@ -24,4 +24,4 @@ class CCAdminControlPanel extends CObject implements IController {
   }
  
 
-} 
+}
