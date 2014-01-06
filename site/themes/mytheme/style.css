@@ -3,16 +3,16 @@
  */
 @import url(../../../themes/grid/style.css);
 
-html{background-color:#D0FFB5;}
-body{background-color:#DCDCDC;}
-#outer-wrap-header{background-color:#D0FFB5;border-bottom:2px solid #008431}
-#outer-wrap-footer{background-color:#D0FFB5}
+html{background-color:#9BD68D;}
+body{background-color:#B8FFA8;}
+#outer-wrap-header{background-color:#fff;border-bottom:2px solid #D6FFCC}
+#outer-wrap-footer{background-color:#9BD68D}
 a{color:#333}
 a:hover{color: #444}
-#navbar ul.menu li a{padding-bottom:2px;background-color:#606060;border-bottom:none;border-color:#333;}
-#navbar ul.menu li a.selected{padding-bottom:4px;background-color:#DCDCDC;border-bottom:none;border-color:#008431;}
-#navbar ul.menu li a.selected:hover{padding-bottom:4px;background-color:#DCDCDC;border-bottom:none;border-color:#008431;}
-#navbar ul.menu li a:hover{padding-bottom:2px;background-color:#8C8C8C;border-bottom:none;border-color:#555;}
+#navbar ul.menu li a{padding-bottom:2px;background-color:#777;border-bottom:none;border-color:#555;}
+#navbar ul.menu li a.selected{padding-bottom:4px;background-color:#B8FFA8;border-bottom:none;border-color:#D6FFCC;}
+#navbar ul.menu li a.selected:hover{padding-bottom:4px;background-color:#B8FFA8;border-bottom:none;border-color:#D6FFCC;}
+#navbar ul.menu li a:hover{padding-bottom:2px;background-color:#9BD68D;border-bottom:none;border-color:#77BF65;}
 
 #banner #site-title {
 font-family: sans-serif;
