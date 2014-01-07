@@ -1,0 +1,20 @@
+/** 
+ * Description: Sample theme for site which extends the CobraTriangle grid-theme.
+ */
+@import url(../../../themes/grid/style.css);
+
+html{background-color:#B2AF92;}
+body{background-color:#DDFBFF;}
+#outer-wrap-header{background-color:#F9FEFF;border-bottom:2px solid #69EEFF}
+#outer-wrap-footer{background-color:#B2AF92;}
+#inner-wrap-main{background: -moz-linear-gradient(56deg, #ddfbff 0%, #f9feff 5%, #ddfbff 100%);}
+a{color:#333}
+a:hover{color: #444}
+#navbar ul.menu li a{padding-bottom:2px;background-color:#B2AF92;border-bottom:none;border-color:#CCC69C;}
+#navbar ul.menu li a.selected{padding-bottom:4px;background-color:#DDFBFF;border-bottom:none;border-color:#69EEFF;}
+#navbar ul.menu li a.selected:hover{padding-bottom:4px;background-color:#DDFBFF;border-bottom:none;border-color:#69EEFF;}
+#navbar ul.menu li a:hover{padding-bottom:2px;background-color:#69EEFF;border-bottom:none;border-color:#DDFBFF;}
+
+#banner #site-title {font-family: sans-serif;text-shadow: none;}
+#sidebar {background: -moz-linear-gradient(56deg,#ddfbff 0%, #f9feff 100%);width:292px;padding-left: 5px;border-right:3px solid #ddfbff;}
+#footer{color: #444;}

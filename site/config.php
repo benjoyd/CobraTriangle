@@ -161,7 +161,7 @@ $ct->config['menus'] = array(
  * available to the template files.
  */
 $ct->config['theme'] = array(
-  'path'            => 'site/themes/mytheme',
+  'path'            => 'site/themes/istheme',
   //'path'            => 'themes/grid',
   'parent'          => 'themes/grid',
   'stylesheet'      => 'style.css',
