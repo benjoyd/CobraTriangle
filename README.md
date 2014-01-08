@@ -27,14 +27,19 @@ Anpassa ramverkets utseende
 182:  'footer' => '&lt;p&gt;CobraTriangle &copy; by Benjamin based on Lydia &copy; by Mikael Roos&lt;/p&gt;',
 </pre>
 
-Anpassa meny
-------------
-
-+ I *config.php* kan man anpassa menyn eller ta bort den helt om man känner för det. Med ramverket kommer en hem-sida, en blogg och en gästbok, dessa länkas i menyn som standard. 
+Anpassa ramverkets innehåll
+---------------------------
++ För att lägga till innehåll i ramverket så går man till *content/create* och fyller i fälten. **Title** är sidans titel. **Key** är nyckelord. **Content** är innehållet på sidan. **Type** är antingen post ifall det är innehåll för bloggen eller page om det är en egen statisk sida. **Filter** är olika sätt att formatera texten, *markdown* rekomenderas(för alternativ hur man formaterar med markdown, sök på google.) 
++ I *config.php* kan man anpassa menyn eller ta bort den helt om man känner för det. Med ramverket kommer en hem-sida, en blogg och en gästbok, dessa länkas i menyn som standard. När du lägger till en sida i menyn så skriver du *page/view/* följt av id på din post/sida, tex *page/view/9*.
 
 <pre>
 129  'my-navbar' => array(
 130    'home'      => array('label'=>'About Me', 'url'=>'my'),
 131    'blog'      => array('label'=>'My Blog', 'url'=>'my/blog'),
 132    'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
+</pre>
+
+Exempel:
+<pre>
+'test' => array('label'=>'Test', 'url'=>'page/view/9'),
 </pre>
