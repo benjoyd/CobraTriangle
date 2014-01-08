@@ -16,9 +16,9 @@ ini_set('display_errors', 1);
  */
 $ct->config['debug']['cobratriangle'] = false;
 $ct->config['debug']['session'] = false;
-$ct->config['debug']['timer'] = true;
-$ct->config['debug']['db-num-queries'] = true;
-$ct->config['debug']['db-queries'] = true;
+$ct->config['debug']['timer'] = false;
+$ct->config['debug']['db-num-queries'] = false;
+$ct->config['debug']['db-queries'] = false;
 
 
 
@@ -131,7 +131,6 @@ $ct->config['menus'] = array(
     'blog'      => array('label'=>'My Blog', 'url'=>'my/blog'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
     'module'    => array('label'=>'Modules', 'url'=>'module'),
-    'test'      => array('label'=>':)', 'url'=>''),
   ),
 );
 
