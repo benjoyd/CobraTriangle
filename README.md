@@ -14,8 +14,10 @@ Anpassa ramverkets utseéende
 
 + Ändra till en egen logo genom att lägga en bildfil i din temamapp(standardtemat är lokaliserat under site/themes/istheme) och ändra i config.php(i sitemappen) på rad 179 till namnet på din logofil. Standardnamnet på logofilen är *logo_80x80.png*. 
 <pre>
-178  'favicon' => 'logo_80x80.png',
-179  'logo' => 'logo_80x80.png',
-180  'logo_width'  => 80,
-181  'logo_height' => 80,
+..
+178:  'favicon' => 'logo_80x80.png',
+179:  'logo' => 'logo_80x80.png',
+180:  'logo_width'  => 80,
+181:  'logo_height' => 80,
+..
 </pre>
