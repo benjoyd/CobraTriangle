@@ -9,7 +9,7 @@ Installation av ramverket
 3. För att installera på studentservern behöver du öppna .htaccess-filen och skriva in sökvägen till platsen där du installerat ramverket på raden *Rewritebase*. Ta även bort eventuella #-tecken. Exempelvis #RewriteBase /~akronym/CobraTriangle/ blir RewriteBase /~akronym/CobraTriangle/.
 4. Öppna sidans sökväg i din webbläsare och klicka på *module/install* för att slutföra installationen.
 
-Anpassa ramverkets utseéende
+Anpassa ramverkets utseende
 ----------------------------
 
 + Ändra till en egen logo genom att lägga en bildfil i din temamapp(standardtemat är lokaliserat under site/themes/istheme) och ändra i *config.php*(i sitemappen) på rad 179 till namnet på din logofil. Standardnamnet på logofilen är *logo_80x80.png*. Här finns även möjligheten att ändra favicon och storleken på logon.
