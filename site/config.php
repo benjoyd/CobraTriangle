@@ -130,7 +130,6 @@ $ct->config['menus'] = array(
     'home'      => array('label'=>'About Me', 'url'=>'my'),
     'blog'      => array('label'=>'My Blog', 'url'=>'my/blog'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
-    'away'      => array('label'=>'Home Me', 'url'=>'page/view/9'),
   ),
 );
 
